@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Situs</title>
+  <link rel="manifest" href="manifest.json">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #3c3cff;
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    a.button {
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #000, #000);
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    a.button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      .button-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>My Situs</h1>
+  <div class="button-container">
+    <a href="https://google.com" class="button" target="_blank">🔍 Google</a>
+    <a href="https://translate.google.co.id/?hl=id&sl=id&tl=en&op=translate" class="button" target="_blank">🌐 Google Translate</a>
+    <a href="https://nemits99.github.io/emoji" class="button" target="_blank">📲 Emoji</a>
+    <a href="https://nemits99.github.io/wa" class="button" target="_blank">💬 WhatsApp</a>
+    <a href="https://youtube.com" class="button" target="_blank">🏀YouTube</a>
+    <a href="https://github.com" class="button" target="_blank">🐙 GitHub</a>
+    <a href="https://chatgpt.com/c/67407f59-66b8-800d-a7d6-ab5a34fe1e81" class="button" target="_blank">🤖 GPT</a>
+
+  </div>
+  <script>
+    // Daftar service worker
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./service-worker.js")
+        .then((registration) => {
+            console.log("Service Worker terdaftar dengan sukses:", registration.scope);
+        })
+        .catch((error) => {
+            console.log("Service Worker pendaftaran gagal:", error);
+        });
+    }
+</script>
+</body>
+</html>
+
